@@ -1,5 +1,6 @@
 <template>
   <form action>
+    <p>Could use account test/test for logging in</p>
     <div>
       <label for="email">Email</label>
       <input type="email" placeholder="Your email" id="email" v-model="email">
