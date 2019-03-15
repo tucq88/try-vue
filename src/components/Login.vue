@@ -1,12 +1,12 @@
 <template>
-  <form action="">
+  <form action>
     <div>
       <label for="email">Email</label>
       <input type="email" placeholder="Your email" id="email" v-model="email">
     </div>
     <div>
       <label for="password">Password</label>
-      <input type="passowrd" placeholder="Your secret password" id="password" v-model="password">
+      <input type="password" placeholder="Your secret password" id="password" v-model="password">
     </div>
     <div>
       <button type="button" v-on:click="login()">Login</button>
@@ -15,17 +15,25 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { AuthService } from "@/services/auth";
 
 @Component
 export default class LoginForm extends Vue {
-  @Prop({default: ''}) public email!: string;
-  @Prop({default: ''}) public password!: string;
+  public email: string = "";
+  public password: string = "";
+  private svc = new AuthService();
 
   public login() {
-    console.log(this.email, this.password);
+    this.svc
+      .login({ email: this.email, password: this.password })
+      .then(response => {
+        this.$router.push('about');
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
-
 }
 </script>
 
