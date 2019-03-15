@@ -6,8 +6,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { AuthService } from "@/services/auth";
+  import { Component, Vue } from 'vue-property-decorator';
 
-@Component
-export default class Header extends Vue {}
+  @Component
+  export default class Header extends Vue {
+  }
+</script>

@@ -6,17 +6,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import Header from  '@/components/Header.vue';
-@Component({
-  components: {
-    Header
+  import { Component, Vue } from 'vue-property-decorator';
+  import Header from '@/components/Header.vue';
+
+  @Component({
+    components: {
+      Header
+    }
+  })
+  export default class App extends Vue {
   }
-})
-export default class App extends Vue {
-}
 </script>
 
 <style lang="scss">
-@import "./styles/main.scss";
+  @import "./styles/main.scss";
 </style>

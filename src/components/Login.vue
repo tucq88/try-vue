@@ -16,16 +16,16 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { AuthService } from "@/services/auth";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { AuthService } from '@/services/auth';
 
 @Component
 export default class LoginForm extends Vue {
-  public email: string = "";
-  public password: string = "";
+  email: string = '';
+  password: string = '';
   private svc = new AuthService();
 
-  public login() {
+  login() {
     this.svc
       .login({ email: this.email, password: this.password })
       .then(response => {

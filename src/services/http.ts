@@ -15,12 +15,12 @@ export let ax = axios.create({
   timeout: 10000,
   responseType: 'json',
   transformRequest: [
-    (data) => {
+    data => {
       return data;
     },
   ],
   transformResponse: [
-    (data) => {
+    data => {
       if (!data) {
         const msg = 'Unknow Error';
         throw new Error(msg);
@@ -30,11 +30,11 @@ export let ax = axios.create({
   ],
 });
 
-ax.interceptors.request.use((config) => {
-  const identity = localStorage.getItem('user');
-  config.headers.Authorization =  identity ? `Bearer ${identity.email}` : '';
+ax.interceptors.request.use(config => {
+  const identity: any = localStorage.getItem('user');
+  config.headers.Authorization = identity ? `Bearer ${identity.email}` : '';
   return config;
-}, (error) => {
+}, error => {
   return Promise.reject(error);
 });
 
@@ -62,10 +62,10 @@ export function get<T>(url: string, data?: any): Promise<T> {
     .get(url, {
       params: processData(data),
     })
-    .then((res) => {
+    .then(res => {
       return res.data;
     })
-    .catch((err) => {
+    .catch(err => {
       handleError(err);
       throw err;
     });
@@ -74,10 +74,10 @@ export function get<T>(url: string, data?: any): Promise<T> {
 export function post<T>(url: string, data?: any): Promise<T> {
   return ax
     .post(url, processData(data))
-    .then((res) => {
+    .then( res => {
       return res.data;
     })
-    .catch((err) => {
+    .catch(err => {
       handleError(err);
       throw err;
     });

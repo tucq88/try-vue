@@ -13,7 +13,7 @@
     "baseUrl": ".",
     "types": [
       "webpack-env",
-      "jest",
+      "jest"
     ],
     "typeRoots": [
       "node_modules/@types",
@@ -37,7 +37,7 @@
     "src/**/*.vue",
     "typings/**/*.ts",
     "tests/**/*.ts",
-    "tests/**/*.tsx",
+    "tests/**/*.tsx"
   ],
   "exclude": [
     "node_modules"

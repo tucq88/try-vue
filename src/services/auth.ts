@@ -2,9 +2,9 @@ import { get } from './http';
 
 
 export class AuthService {
-  public login(data: any) {
+  login(data: any) {
     return get('test.json')
-      .then( (response) => {
+      .then((response: any) => {
         if (response.email !== data.email) {
           throw Error('Invalid indentity');
         }
@@ -13,7 +13,7 @@ export class AuthService {
       });
   }
 
-  public logout() {
+  logout() {
     localStorage.removeItem('user');
   }
 
