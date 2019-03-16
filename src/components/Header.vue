@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
     <router-link to="/login">Login</router-link>|
-    <router-link to="/about">Requiring Logged In</router-link>
+    <router-link to="/">Requiring Logged In</router-link>
   </div>
 </template>
 

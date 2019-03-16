@@ -1,0 +1,11 @@
+#nav {
+  padding: 2rem;
+  a {
+    padding: 0 1rem;
+    font-weight: bold;
+
+    &.router-link-exact-active {
+      color: $brand-color;
+    }
+  }
+}
