@@ -2,7 +2,8 @@ import { get } from './http';
 
 
 export class AuthService {
-  login(data: any) {
+  login(data: Partial<Types.FulfillmentManager>) {
+    // TODO Change method once has endpoint
     return get('test.json')
       .then((response: any) => {
         if (response.email !== data.email) {
